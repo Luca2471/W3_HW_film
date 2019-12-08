@@ -16,7 +16,7 @@ film1 = Film.new({
 film1.save()
 
 film2 = Film.new({
-  'title' => 'The Secenth Seal',
+  'title' => 'The Seventh Seal',
   'price' => 7
   })
 

@@ -1,0 +1,21 @@
+DROP TABLE IF EXISTS ticket;
+DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS film;
+
+CREATE TABLE film(
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  price INT
+);
+
+CREATE TABLE customer(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  funds INT
+);
+
+CREATE TABLE ticket(
+  id SERIAL PRIMARY KEY,
+  film_id INT NOT NULL REFERENCES film(id) ON DELETE CASCADE,
+  customer_id INT NOT NULL REFERENCES customer(id) ON DELETE CASCADE
+);
